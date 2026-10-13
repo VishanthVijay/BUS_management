@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">BUS<span>MANAGER</span></div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#buses">Buses</a>
+            <a href="#routes">Routes</a>
+            <a href="#bookings">Bookings</a>
+        </nav>
+
+        <button class="admin-btn">Admin Panel</button>
+    </header>
+
+    <main>
+
+        <section class="hero" id="dashboard">
+            <div>
+                <p class="tag">TRANSPORT MANAGEMENT SYSTEM</p>
+                <h1>Smart Bus<br><span>Management</span></h1>
+                <p class="description">
+                    Manage buses, routes, schedules and passenger bookings
+                    from one simple platform.
+                </p>
+
+                <div class="hero-buttons">
+                    <button onclick="showSection('buses')">View Buses</button>
+                    <button class="secondary" onclick="showSection('bookings')">
+                        Book Ticket
+                    </button>
+                </div>
+            </div>
+
+            <div class="bus-card">
+                <div class="bus-icon">🚌</div>
+                <h3>Today's Operations</h3>
+
+                <div class="operation">
+                    <span>Active Buses</span>
+                    <strong>24</strong>
+                </div>
+
+                <div class="operation">
+                    <span>Routes</span>
+                    <strong>18</strong>
+                </div>
+
+                <div class="operation">
+                    <span>Bookings</span>
+                    <strong>342</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">🚌</div>
+                <div>
+                    <p>Total Buses</p>
+                    <h2>32</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📍</div>
+                <div>
+                    <p>Active Routes</p>
+                    <h2>18</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🎫</div>
+                <div>
+                    <p>Today's Bookings</p>
+                    <h2>342</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div>
+                    <p>Passengers</p>
+                    <h2>1,240</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="content-section" id="buses">
+
+            <div class="section-title">
+                <div>
+                    <p class="tag">BUS DATABASE</p>
+                    <h2>Bus Details</h2>
+                </div>
+
+                <button onclick="openModal()">+ Add Bus</button>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bus ID</th>
+                            <th>Bus Number</th>
+                            <th>Route</th>
+                            <th>Driver</th>
+                            <th>Capacity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="busTable">
+
+                        <tr>
+                            <td>#B001</td>
+                            <td>TN 01 AB 1234</td>
+                            <td>Chennai → Tambaram</td>
+                            <td>Ramesh Kumar</td>
+                            <td>50</td>
+                            <td><span class="status active">Active</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#B002</td>
+                            <td>TN 02 CD 5678</td>
+                            <td>Chennai → Vandalur</td>
+                            <td>Arun Kumar</td>
+                            <td>45</td>
+                            <td><span class="status active">Active</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#B003</td>
+                            <td>TN 03 EF 9012</td>
+                            <td>Tambaram → Chengalpattu</td>
+                            <td>Vijay Raj</td>
+                            <td>55</td>
+                            <td><span class="status maintenance">Maintenance</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#B004</td>
+                            <td>TN 04 GH 3456</td>
+                            <td>Chennai → Kelambakkam</td>
+                            <td>Suresh Babu</td>
+                            <td>50</td>
+                            <td><span class="status active">Active</span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+
+        <section class="content-section" id="routes">
+
+            <div class="section-title">
+                <div>
+                    <p class="tag">ROUTE MANAGEMENT</p>
+                    <h2>Available Routes</h2>
+                </div>
+            </div>
+
+            <div class="route-grid">
+
+                <div class="route-card">
+                    <div class="route-number">01</div>
+                    <h3>Chennai → Tambaram</h3>
+                    <p>45 km • 12 Stops</p>
+                    <span>₹35 / passenger</span>
+                </div>
+
+                <div class="route-card">
+                    <div class="route-number">02</div>
+                    <h3>Chennai → Vandalur</h3>
+                    <p>32 km • 9 Stops</p>
+                    <span>₹30 / passenger</span>
+                </div>
+
+                <div class="route-card">
+                    <div class="route-number">03</div>
+                    <h3>Tambaram → Chengalpattu</h3>
+                    <p>38 km • 10 Stops</p>
+                    <span>₹40 / passenger</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-section booking-section" id="bookings">
+
+            <div class="section-title">
+                <div>
+                    <p class="tag">PASSENGER SERVICES</p>
+                    <h2>Book a Bus Ticket</h2>
+                </div>
+            </div>
+
+            <form id="bookingForm">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Passenger Name</label>
+                        <input type="text" id="passenger" placeholder="Enter passenger name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Bus Number</label>
+                        <select id="busNumber">
+                            <option>TN 01 AB 1234</option>
+                            <option>TN 02 CD 5678</option>
+                            <option>TN 04 GH 3456</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>From</label>
+                        <input type="text" id="from" placeholder="Starting point" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>To</label>
+                        <input type="text" id="to" placeholder="Destination" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Travel Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Seats</label>
+                        <input type="number" id="seats" min="1" max="10" value="1">
+                    </div>
+
+                </div>
+
+                <button class="book-btn" type="submit">Confirm Booking</button>
+
+            </form>
+
+            <div id="bookingMessage"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 BusManager • Bus Management System</p>
+        <p>Database Interface: JDBC / ODBC</p>
+    </footer>
+
+    <div class="modal" id="busModal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeModal()">×</button>
+
+            <h2>Add New Bus</h2>
+
+            <form id="busForm">
+
+                <input type="text" id="newBusNumber"
+                       placeholder="Bus Number" required>
+
+                <input type="text" id="newRoute"
+                       placeholder="Route" required>
+
+                <input type="text" id="newDriver"
+                       placeholder="Driver Name" required>
+
+                <input type="number" id="newCapacity"
+                       placeholder="Capacity" required>
+
+                <button type="submit">Add Bus</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
