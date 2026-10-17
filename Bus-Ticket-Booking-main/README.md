@@ -16,9 +16,9 @@ Booking operations run as database transactions, and the schema guarantees that 
 | | |
 |---|---|
 | **Project type** | College mini project |
-| **Student** | Vishanth V |
-| **Department** | Computer Application |
-| **Institution** | Crescent Institute of Science and Technology |
+| **Student** | Sriram |
+| **Department** | Computer Science |
+| **Institution** | Vellore Institute  Technology |
 | **Technology** | Java 17+, Swing, JDBC, SQLite |
 
 ## Screenshots
